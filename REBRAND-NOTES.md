@@ -24,8 +24,11 @@ Trabajo derivado de **Avatar App Kit** (Hainrixz, MIT). Cambios aplicados:
 - `next.config.ts`: X-Frame-Options DENY, nosniff, Referrer-Policy, Permissions-Policy.
 - CSP incluida como **plantilla comentada** (activar y probar build antes de publicar).
 
+## Seguridad (auditoría System Studio) — ver SECURITY.md
+- ✅ Guard `Sec-Fetch-Site` en `GET /api/download` (bloquea uso cross-site como proxy).
+- ✅ Security headers en `next.config.ts` (anti-clickjacking, nosniff, referrer, permissions).
+
 ## Pendiente / opcional (no aplicado)
-- Guard anti-CSRF en `GET /api/download` (patch listo, requiere probar la descarga).
 - Reemplazar `.github/banner.jpg` y `opengraph-image.jpg` por arte propio.
 - Definir la fuente exacta del logo si se quiere el wordmark idéntico.
 

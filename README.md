@@ -4,13 +4,15 @@
 
 ![System Studio](.github/banner.jpg)
 
+> **System Studio build.** Este repositorio es un *fork* de [Avatar App Kit](https://github.com/Hainrixz/avater-appkit) (Hainrixz, MIT) que fue **auditado en seguridad, endurecido (hardening) y rebrandeado** por System Studio. La ingeniería base y buena parte de la documentación técnica de abajo son del proyecto original; el aporte de este build es el análisis de seguridad, las mejoras de configuración y la identidad visual. Ver `REBRAND-NOTES.md` para el detalle de los cambios.
+
 **Put yourself anywhere.** A local, open-source studio for the [Higgsfield API](https://docs.higgsfield.ai/docs) — drop a photo, get yourself in another city, in a jacket you don't own, or standing next to someone three time zones away.
 
 You bring your own API key. Nothing is hardcoded, nothing is committed, and it runs on your machine — yours goes into an httpOnly cookie in your browser for 30 days, or into `.env.local` if you would rather not paste it on every fresh profile.
 
 ```bash
-git clone https://github.com/<TU-USUARIO>/avater-appkit
-cd avater-appkit
+git clone https://github.com/SystemStudio09/SS-avater-appkit
+cd SS-avater-appkit
 npm install
 npm run dev
 ```

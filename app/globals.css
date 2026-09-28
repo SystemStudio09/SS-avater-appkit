@@ -125,17 +125,17 @@
 :root {
   /* marca — rebrand System Studio: cyan (#00bfc6) sobre navy (#000813).
      Los ratios WCAG comentados arriba corresponden a la metodología del kit original. */
-  --canvas: #000813;
-  --panel: #071320;
-  --panel-raised: #0d2033;
-  --rose: #00bfc6;
-  --rose-hover: #2fd4d9;
-  --rose-press: #019497;
-  --ink: #f8fafc;
+  --canvas: #0b1118;
+  --panel: #141e2a;
+  --panel-raised: #1c2836;
+  --rose: #00d1c2;
+  --rose-hover: #2ee6d6;
+  --rose-press: #00a89b;
+  --ink: #f8f9fa;
   --ink-muted: #94a3b8; /* 7.36:1 sobre panel */
   --ink-faint: #7e8ba3; /* 5.49:1 — NO #64748B (3.97:1, falla) */
   --hairline: #123047; /* decorativo: 1.65:1 */
-  --edge: #22b8c4; /* foco / borde activo: 4.29:1 */
+  --edge: #00d1c2; /* foco / borde activo: 4.29:1 */
 
   /* escenario (resultados) */
   --stage: #0a0a0c;
@@ -177,7 +177,7 @@
   --popover: #12122b;
   --popover-foreground: var(--ink);
   --primary: var(--rose);
-  --primary-foreground: #000813;
+  --primary-foreground: #0b1118;
   --secondary: var(--panel-raised);
   --secondary-foreground: var(--ink);
   --muted: var(--panel-raised);

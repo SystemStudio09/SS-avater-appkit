@@ -20,6 +20,18 @@ export async function GET(req: Request): Promise<Response> {
     const url = params.get("url");
     const filename = (params.get("filename") || "system-studio").replace(/[^\w.-]+/g, "-");
 
+    // Hardening (System Studio audit): esta ruta es un GET disparado por un
+    // <a download> same-origin, así que no puede llevar el header anti-CSRF del
+    // resto de la API. Para que un sitio de terceros no use este localhost como
+    // proxy de descarga, rechazamos por Fetch Metadata: el navegador manda
+    // Sec-Fetch-Site en toda request (navegaciones incluidas). "same-origin" es la
+    // descarga legítima; "none" es acceso directo/tipeado; "cross-site" es el abuso
+    // y se rechaza. Ausente (navegador muy viejo) se permite para no romper nada.
+    const site = req.headers.get("sec-fetch-site");
+    if (site && site !== "same-origin" && site !== "none") {
+      throw new AppError("invalid_params", "Cross-site download requests are not allowed.");
+    }
+
     if (!isAllowedAssetUrl(url)) {
       throw new AppError("invalid_params", "That URL isn't a Higgsfield result.");
     }
